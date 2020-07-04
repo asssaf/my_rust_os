@@ -1,0 +1,1 @@
+qemu-system-x86_64 -drive format=raw,file=target/x86_64-my_rust_os/debug/bootimage-my_rust_os.bin
