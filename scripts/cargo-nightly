@@ -1,3 +1,9 @@
 : ${IMAGE:=asssaf/rust:nightly}
-docker run --rm -it -v ${PWD}:/mnt --workdir /mnt --entrypoint cargo $IMAGE $*
-
+docker run --rm -it \
+    -v ${PWD}:/mnt \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e "DISPLAY=unix${DISPLAY}" \
+    --workdir /mnt \
+    --entrypoint cargo \
+    $IMAGE \
+    $*
