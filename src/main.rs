@@ -27,6 +27,8 @@ fn panic(info: &PanicInfo) -> ! {
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
+    my_rust_os::init();
+
     #[cfg(test)]
     test_main();
 
